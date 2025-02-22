@@ -1,25 +1,15 @@
-def partition_array(numbers,low,high):
-    j=low
-    pivot = numbers[high]
-    for i in range (low,high):
+def partionArray(numbers):
+    j = 0
+    pivot = numbers[-1]
+    for i in range(len(numbers)):
         if numbers[i] < pivot:
-            numbers[i], numbers[j] = numbers[j], numbers[i] #move the smaller element to the left
-            j+=1
-    numbers[j], numbers[high] = numbers[high], numbers[j] #place the pivot element in its final position
-    return j
-    def quick_sort(numbers,low,high):
-        if low < high:
-          pivot_index = partition_array(numbers,low, high)
-          quick_sort(numbers, low, pivot_index-1)  
-          quick_sort(numbers, pivot_index+1, high) 
-        
-    
+            numbers[i], numbers[j] = numbers[j], numbers[i] # move the smaller element to the left
+            j += 1
+    numbers[j], numbers[-1] = numbers[-1], numbers[j] # place the pivot element in its final position
 
+print('Enter the input numbers')
+numbers = list(map(int, input().split()))
 
-
-
-
-
-
-print('Enter the no. of oranges')
-numbers = list(map(int,input().split()))
+print(f'Input Array is: {numbers}')
+partionArray(numbers)
+print(f'Partitioned Array is: {numbers}')
