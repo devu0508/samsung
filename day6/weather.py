@@ -11,7 +11,7 @@ url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&
 # Send a GET request to the API
 response = requests.get(url)
 
-# Check if the request was successful
+# Check if the request was successfull
 if response.status_code == 200:
     # Parse the JSON data
     weather_data = response.json()
