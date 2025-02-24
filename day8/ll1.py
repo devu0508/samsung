@@ -50,7 +50,7 @@ class LinkedList:
 ll = LinkedList()
 ll.add_at_pos(10, 0)  
 ll.add_at_pos(20, 1)  
-ll.add_at_pos(30, 2)  
+ll.add_at_pos(30, 2)
 ll.display()  
 ll.delete_from_pos(1)  
 ll.display() 
