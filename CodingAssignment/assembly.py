@@ -2,35 +2,34 @@ def can_arrange_students(boys, girls):
     boys.sort()
     girls.sort()
     
-    start_with_boy = True
-    for i in range(len(boys)):
-        if boys[i] > girls[i]:
-            start_with_boy = False
-            break
-    if start_with_boy:
-        return "YES"
+    combined1 = [None] * (len(boys) + len(girls))
+    combined2 = [None] * (len(boys) + len(girls))
     
-    start_with_girl = True
     for i in range(len(boys)):
-        if girls[i] > boys[i + 1]:
-            start_with_girl = False
-            break
-    if start_with_girl:
+        combined1[2 * i] = boys[i]
+        combined1[2 * i + 1] = girls[i]
+        
+        combined2[2 * i] = girls[i]
+        combined2[2 * i + 1] = boys[i]
+        
+    if (all(combined1[i] <= combined1[i + 1] for i in range(len(combined1) - 1)) or 
+        all(combined2[i] <= combined2[i + 1] for i in range(len(combined2) - 1))):
         return "YES"
     
     return "NO"
 
-
 def main():
-    t = int(input("Enter number of test cases: "))
+    t = int(input("Enter the number of test cases: "))
     results = []
+    
     for _ in range(t):
-        n = int(input("Enter number of boys and girls: "))
-        boys = list(map(int, input("Enter boys' heights: ").split()))
-        girls = list(map(int, input("Enter girls' heights: ").split()))
+        n = int(input("Enter the number of boys and girls: "))
+        boys = list(map(int, input("Enter the heights of the boys: ").split()))
+        girls = list(map(int, input("Enter the heights of the girls: ").split()))
+        
         result = can_arrange_students(boys, girls)
         results.append(result)
-    
+        
     for result in results:
         print(result)
 
