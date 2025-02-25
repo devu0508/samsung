@@ -20,6 +20,6 @@ plt.title('Units Sold vs Category', fontsize=16)
 plt.xlabel('Category', fontsize=14)
 plt.ylabel('Units Sold', fontsize=14)
 
-plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
-plt.tight_layout()  # Adjust layout to avoid label clipping
+plt.xticks(rotation=45)  
+plt.tight_layout()  
 plt.show()

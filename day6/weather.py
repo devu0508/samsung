@@ -24,3 +24,5 @@ if response.status_code == 200:
     print(f"Wind Speed: {weather_data['wind']['speed']} m/s")
 else:
     print(f"Failed to get weather data. Status code: {response.status_code}")
+
+

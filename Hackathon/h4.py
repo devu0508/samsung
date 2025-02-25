@@ -25,7 +25,7 @@ plt.ylabel('Units', fontsize=14)
 plt.xticks(index + bar_width / 2, df['Product ID'], rotation=45, fontsize=12)
 plt.yticks(fontsize=12)
 plt.legend()
-plt.tight_layout()  # Adjust layout to avoid label clipping
+plt.tight_layout()  
 plt.grid(axis='y')
 
 plt.show()
